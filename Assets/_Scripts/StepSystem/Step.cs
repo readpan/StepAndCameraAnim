@@ -7,9 +7,9 @@ public class Step : StepBase
     private int _targetUniqueId;
     private Enum_GameObjectStatus _targetStatus;
     private bool _autoCameraAnim;
-    public Action StepAutoAction;
+    
     private GameObjectInfo _gameObjectInfo = null;
-    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, bool autoCameraAnim = true)
+    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, bool autoCameraAnim = true):base()
     {
         _targetUniqueId = targetUniqueId;
         _targetStatus = targetStatus;
@@ -32,13 +32,22 @@ public class Step : StepBase
         }
     }
 
-    public override void StartStep()
+    protected override void StartStep()
     {
+        //添加高亮
+        _gameObjectInfo.AddHightLight();
+
         //是否自动移动摄像机
         if (_autoCameraAnim)
         {
             _gameObjectInfo.Locator.DoLocator();
         }
         Debug.Log(_targetUniqueId + " has start");
+    }
+
+    public override void EndStep()
+    {
+        //取消高亮物体
+        _gameObjectInfo.RemoveHighligh();
     }
 }
