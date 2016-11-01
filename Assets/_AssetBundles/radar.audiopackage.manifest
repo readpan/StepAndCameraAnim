@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2311230544
+CRC: 847485313
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7898c8984c6089c0cb6a158affda2b6b
+    Hash: b1f825012ccea86dfe67fddb404186dd
   TypeTreeHash:
     serializedVersion: 2
     Hash: c516f2a3b2b6b67ef759f6410a790acd
@@ -12,34 +12,18 @@ ClassTypes:
 - Class: 83
   Script: {instanceID: 0}
 Assets:
-- Assets/_Audio/Radar/Radar_Startup_030.OGG
-- Assets/_Audio/Radar/Radar_Startup_004.OGG
-- Assets/_Audio/Radar/Radar_Startup_005.OGG
-- Assets/_Audio/Radar/Radar_Startup_012.OGG
-- Assets/_Audio/Radar/Radar_Startup_028.OGG
-- Assets/_Audio/Radar/Radar_Startup_018.OGG
-- Assets/_Audio/Radar/Radar_Startup_014.OGG
-- Assets/_Audio/Radar/Radar_Startup_029.OGG
-- Assets/_Audio/Radar/Radar_Startup_009.OGG
-- Assets/_Audio/Radar/Radar_Startup_002.OGG
-- Assets/_Audio/Radar/Radar_Startup_010.OGG
-- Assets/_Audio/Radar/Radar_Startup_026.OGG
-- Assets/_Audio/Radar/Radar_Startup_025.OGG
-- Assets/_Audio/Radar/Radar_Startup_006.OGG
-- Assets/_Audio/Radar/Radar_Startup_020.OGG
-- Assets/_Audio/Radar/Radar_Startup_019.OGG
-- Assets/_Audio/Radar/Radar_Startup_008.OGG
-- Assets/_Audio/Radar/Radar_Startup_016.OGG
-- Assets/_Audio/Radar/Radar_Startup_027.OGG
-- Assets/_Audio/Radar/Radar_Startup_021.OGG
-- Assets/_Audio/Radar/Radar_Startup_017.OGG
-- Assets/_Audio/Radar/Radar_Startup_011.OGG
-- Assets/_Audio/Radar/Radar_Startup_024.OGG
-- Assets/_Audio/Radar/Radar_Startup_023.OGG
-- Assets/_Audio/Radar/Radar_Startup_001.OGG
-- Assets/_Audio/Radar/Radar_Startup_013.OGG
-- Assets/_Audio/Radar/Radar_Startup_022.OGG
-- Assets/_Audio/Radar/Radar_Startup_003.OGG
-- Assets/_Audio/Radar/Radar_Startup_007.OGG
-- Assets/_Audio/Radar/Radar_Startup_015.OGG
+- Assets/_Audio/RadarAudio/Radar_Startup_000.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_002.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_011.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_009.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_012.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_010.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_003.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_007.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_001.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_013.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_006.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_008.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_004.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_005.wav
 Dependencies: []
