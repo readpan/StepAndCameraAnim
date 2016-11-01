@@ -7,9 +7,15 @@ public class Step : StepBase
     private int _targetUniqueId;
     private Enum_GameObjectStatus _targetStatus;
     private bool _autoCameraAnim;
-    
+
     private GameObjectInfo _gameObjectInfo = null;
-    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, bool autoCameraAnim = true):base()
+    /// <summary>
+    /// 步骤配置
+    /// </summary>
+    /// <param name="targetUniqueId">操作目标Id</param>
+    /// <param name="targetStatus">目标状态</param>
+    /// <param name="autoCameraAnim">是否要有过场动画</param>
+    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, bool autoCameraAnim = true) : base()
     {
         _targetUniqueId = targetUniqueId;
         _targetStatus = targetStatus;
@@ -18,6 +24,18 @@ public class Step : StepBase
         {
             Debug.LogError("Can't find Such gameObject whitch id = " + targetUniqueId);
         }
+    }
+
+    /// <summary>
+    /// 步骤配置(带有音频)
+    /// </summary>
+    /// <param name="targetUniqueId">操作目标Id</param>
+    /// <param name="targetStatus">目标状态</param>
+    /// <param name="audioName">音频文件</param>
+    /// <param name="autoCameraAnim">是否要有过场动画</param>
+    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, string audioName, bool autoCameraAnim = true) : this(targetUniqueId, targetStatus, autoCameraAnim)
+    {
+        StepStartAutoAction += () => { AudioManager.Instance.PlayAudio(audioName); };
     }
 
     public override bool keepWaiting

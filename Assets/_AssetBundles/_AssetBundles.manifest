@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 1908296917
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: radar.audiopackage
+      Dependencies: {}
+    Info_1:
+      Name: cube
+      Dependencies: {}

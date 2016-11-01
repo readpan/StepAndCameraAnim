@@ -10,7 +10,13 @@ public class StudyBase : MonoBehaviour
 {
 
     protected List<Step> steps;
+    /// <summary>
+    /// 步骤标记
+    /// </summary>
     public int Index { get; set; }
+    /// <summary>
+    /// 章节结束后
+    /// </summary>
     public Action OnChapterOver;
     public void Start()
     {
