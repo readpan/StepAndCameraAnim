@@ -17,4 +17,9 @@ public class MeditorUI : MonoBehaviour {
     {
         StudyManager.Instance.StartChapter(StudyManager.Instance.TheChapterStudy.CurrentChapterIndex);
     }
+
+    public void SetSubtitle(string subtitle)
+    {
+        UIManager.Instance.UISubtitle.Text.text = subtitle;
+    }
 }

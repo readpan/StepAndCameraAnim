@@ -4,7 +4,7 @@ using System;
 
 namespace Pan_Tools
 {
-    public abstract class Global : MonoBehaviour
+    public class Global : MonoSingleton<Global>
     {
         public static GameObject FindChild(Transform trans, string childName)
         {
@@ -90,6 +90,10 @@ namespace Pan_Tools
             g.SetActive(visible);
         }
 
+        public void StartIEnumerator(IEnumerator ie)
+        {
+            StartCoroutine(ie);
+        }
         /// <summary>
         /// 从Resources中的文件读取txt
         /// </summary>

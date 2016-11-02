@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 847485313
+CRC: 3833970368
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b1f825012ccea86dfe67fddb404186dd
+    Hash: 9b7986dcf8b93770b22d8f8b7107456e
   TypeTreeHash:
     serializedVersion: 2
     Hash: c516f2a3b2b6b67ef759f6410a790acd
@@ -19,11 +19,14 @@ Assets:
 - Assets/_Audio/RadarAudio/Radar_Startup_012.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_010.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_003.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_RDAJiGui.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_007.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_PeiDianXiang.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_001.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_013.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_006.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_008.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_004.wav
 - Assets/_Audio/RadarAudio/Radar_Startup_005.wav
+- Assets/_Audio/RadarAudio/Radar_Startup_FaSheJiXiang.wav
 Dependencies: []

@@ -4,7 +4,7 @@
 /// </summary>
 public enum Enum_GameObjectStatus
 {
-    Normal = 1,
+    Normal = 0,
     /// <summary>
     /// 开关状态开
     /// </summary>
@@ -13,4 +13,5 @@ public enum Enum_GameObjectStatus
     /// 开关状态关
     /// </summary>
     SwitchOff = 202,
+    None = 1000,
 }

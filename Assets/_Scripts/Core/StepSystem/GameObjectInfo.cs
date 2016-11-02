@@ -12,10 +12,13 @@ public class GameObjectInfo : MonoBehaviour, IReset
     public bool IsParent;
     [Tooltip("物体的唯一标识")]
     public int UniqueId;
+
     [Tooltip("物体目前的状态")]
-    public Enum_GameObjectStatus Status = Enum_GameObjectStatus.Normal;
+    public Enum_GameObjectStatus Status;
     [Tooltip("高亮物体")]
     public Transform[] HighlitTarget;
+    [Tooltip("使用自身作为高亮显示物体")]
+    public bool useSelfModelHighlight;
     [Tooltip("闪烁的颜色")]
     public Color HightColorFrom = Color.red;
     public Color HightColorTo = Color.white;
@@ -33,6 +36,10 @@ public class GameObjectInfo : MonoBehaviour, IReset
     {
         if (Locator == null)
             Locator = GetComponent<CameraLocator>();
+        if (useSelfModelHighlight)
+        {
+            HighlitTarget = new Transform[] {transform};
+        }
     }
 
     public void Start()

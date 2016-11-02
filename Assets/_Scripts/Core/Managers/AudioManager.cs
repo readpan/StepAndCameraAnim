@@ -71,7 +71,7 @@ public class AudioManager : MonoSingleton<AudioManager>
              for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
              {
                  NowPlayAudioDic.Add(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i] as AudioClip);
-                 Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
+                 //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
              }
              LoadOverFlag = true;
          }));

@@ -2,20 +2,20 @@
 using System.Collections;
 using Pan_Tools;
 
-public class UIYesNo : MonoBehaviour
+public class UIYesNo : UIPanelBase
 {
     public ButtonGroup ButtonYes, ButtonNo;
-    public CanvasGroup TheCanvasGroup;
 
-    public void Awake()
+    protected override void Awake()
     {
-        TheCanvasGroup = GetComponent<CanvasGroup>();
+        base.Awake();
         ButtonYes = Global.FindChild<ButtonGroup>(transform, "ButtonYes");
         ButtonNo = Global.FindChild<ButtonGroup>(transform, "ButtonNo");
     }
 
-    public void Start()
+    protected override  void Start()
     {
+        base.Start();
         ButtonYes.Button.onClick.AddListener(OnClickButtonYes);
         ButtonNo.Button.onClick.AddListener(OnClickButtonNo);
     }
@@ -31,5 +31,11 @@ public class UIYesNo : MonoBehaviour
         UIManager.Instance.SetCanvasGroupVisibleAndClickable(TheCanvasGroup,false);
         UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UIMain.TheCanvasGroup, true);
 
+    }
+
+    public override void Reset()
+    {
+        base.Reset();
+        UIManager.Instance.SetCanvasGroupVisibleAndClickable(TheCanvasGroup,false);
     }
 }

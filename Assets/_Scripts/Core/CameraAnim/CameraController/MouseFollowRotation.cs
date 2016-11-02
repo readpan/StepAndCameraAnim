@@ -7,6 +7,7 @@ public class MouseFollowRotation : MonoBehaviour
 
     public Transform target;
     public float xSpeed = 200, ySpeed = 200, mSpeed = 10;
+    public float moveSpeed = 10f;
     public float yMinLimit = -50, yMaxLimit = 50;
     public float distance = 7, minDistance = 2, maxDistance = 30;
 
@@ -71,14 +72,14 @@ public class MouseFollowRotation : MonoBehaviour
             {
                 if (Input.GetMouseButton(0))
                 {
-                    RotateX += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
-                    RotateY -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
+                    RotateX += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
+                    RotateY -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
                     RotateY = ClampAngle(RotateY, yMinLimit, yMaxLimit);
                 }
                 if (Input.GetMouseButton(2))
                 {
-                    translateVector3.x += -Input.GetAxis("Mouse X");
-                    translateVector3.y += -Input.GetAxis("Mouse Y");
+                    translateVector3.x += -Input.GetAxis("Mouse X") * moveSpeed * Time.deltaTime;
+                    translateVector3.y += -Input.GetAxis("Mouse Y") * moveSpeed * Time.deltaTime;
                     //CameraManager.Instance.MoveTargetPos(translateVector3.x, translateVector3.y, translateVector3.z);
                     //UpdatePos();
                 }

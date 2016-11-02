@@ -98,6 +98,7 @@ MonoBehaviour:
   xSpeed: 200
   ySpeed: 200
   mSpeed: 10
+  moveSpeed: 3
   yMinLimit: -50
   yMaxLimit: 50
   distance: 7
