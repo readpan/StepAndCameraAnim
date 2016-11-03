@@ -76,15 +76,28 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
         LoadOverFlag = false;
         //清空字典
         NowPlayAudioDic.Clear();
-        StartCoroutine(WWWLoadManager.Instance.LoadSource("http://127.0.0.1/" + name + ".audiopackage", () =>
-         {
-             for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
-             {
-                 NowPlayAudioDic.Add(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i] as AudioClip);
-                 //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
-             }
-             LoadOverFlag = true;
-         }));
+        if (WWWLoadManager.Instance.Offline)
+        {
+            AssetBundle assetBundle = Resources.Load(name + ".audiopackage") as AssetBundle;
+            for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
+            {
+                NowPlayAudioDic.Add(assetBundle.LoadAllAssets()[i].name, assetBundle.LoadAllAssets()[i] as AudioClip);
+                //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
+            }
+        }
+        else
+        {
+            StartCoroutine(WWWLoadManager.Instance.LoadSource("http://127.0.0.1/" + name + ".audiopackage", () =>
+            {
+                for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
+                {
+                    NowPlayAudioDic.Add(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i] as AudioClip);
+                    //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
+                }
+                LoadOverFlag = true;
+            }));
+        }
+
     }
 
     public void Reset()
