@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using DG.Tweening;
 using Pan_Tools;
 
@@ -76,23 +77,28 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
         LoadOverFlag = false;
         //清空字典
         NowPlayAudioDic.Clear();
-        if (WWWLoadManager.Instance.Offline)
+        //Debug.Log(WWW.LoadFromCacheOrDownload("file:///D:/test.JPG",0).size);
+        //if (WWWLoadManager.Instance.Offline)
+        //{
+        //    for (int i = 0; i < 14; i++)
+        //    {
+        //        var tempAudioClip = Resources.Load(name + "/RadarRadar_Startup_" + string.Format("0:000", i)) as AudioClip;
+        //        if (tempAudioClip != null) NowPlayAudioDic.Add(tempAudioClip.name, tempAudioClip);
+        //    }
+        //    var tempAudioClip1 = Resources.Load(name + "/Radar_Startup_FaSheJiXiang") as AudioClip;
+        //    if (tempAudioClip1 != null) NowPlayAudioDic.Add(tempAudioClip1.name, tempAudioClip1);
+        //    var tempAudioClip2 = Resources.Load(name + "/Radar_Startup_PeiDianXiang") as AudioClip;
+        //    if (tempAudioClip2 != null) NowPlayAudioDic.Add(tempAudioClip2.name, tempAudioClip2);
+        //    var tempAudioClip3 = Resources.Load(name + "/Radar_Startup_RDAJiGui") as AudioClip;
+        //    if (tempAudioClip3 != null) NowPlayAudioDic.Add(tempAudioClip3.name, tempAudioClip3);
+        //}
+        //else
         {
-            AssetBundle assetBundle = Resources.Load(name + ".audiopackage") as AssetBundle;
-            for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
-            {
-                NowPlayAudioDic.Add(assetBundle.LoadAllAssets()[i].name, assetBundle.LoadAllAssets()[i] as AudioClip);
-                //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
-            }
-        }
-        else
-        {
-            StartCoroutine(WWWLoadManager.Instance.LoadSource("http://127.0.0.1/" + name + ".audiopackage", () =>
+            StartCoroutine(WWWLoadManager.Instance.LoadSource("http://oby0sn38x.bkt.clouddn.com/" + name + ".audiopackage", () =>
             {
                 for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
                 {
                     NowPlayAudioDic.Add(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i] as AudioClip);
-                    //Debug.Log(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name + " has Loaded.");
                 }
                 LoadOverFlag = true;
             }));

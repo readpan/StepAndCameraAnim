@@ -180,7 +180,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11483282, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
       propertyPath: Offline
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}

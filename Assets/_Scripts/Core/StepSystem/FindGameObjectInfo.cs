@@ -33,7 +33,6 @@ public class FindGameObjectInfo : MonoBehaviour
     void Update()
     {
         FindByGameObjectInfo();
-
     }
 
     [ContextMenu("Find")]
