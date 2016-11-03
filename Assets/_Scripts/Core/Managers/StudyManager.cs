@@ -21,7 +21,8 @@ public class StudyManager : MonoSingleton<StudyManager>, IReset
     /// </summary>
     public Step CurrentStep;
     public ChapterStudy TheChapterStudy;
-
+    [Tooltip("测试用，从第几步开始执行")]
+    public int StartStep = 0;
     public void Awake()
     {
         TheChapterStudy = GetComponentInChildren<ChapterStudy>();

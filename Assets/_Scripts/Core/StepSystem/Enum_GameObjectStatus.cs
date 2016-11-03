@@ -13,5 +13,10 @@ public enum Enum_GameObjectStatus
     /// 开关状态关
     /// </summary>
     SwitchOff = 202,
+
+    /// <summary>
+    /// 按任意键flag
+    /// </summary>
+    PressKey = 1001,
     None = 1000,
 }

@@ -40,7 +40,7 @@ public class CameraLocator : MonoBehaviour
         //先看向物体
         TargetCamera.DOLookAt(transform.position, CameraRotateSpeed);
         //然后按照路径进行运动
-        TargetCamera.DOPath(_paths, MoveDuration).SetDelay(CameraRotateSpeed).OnComplete(() =>
+        TargetCamera.DOPath(_paths, MoveDuration).SetDelay(CameraRotateSpeed).SetEase(CameraManager.Instance.CameraEaseType).OnComplete(() =>
         {
             //最终LookAt物体
             TargetCamera.DOLookAt(transform.position, CameraRotateSpeed).OnComplete(() =>

@@ -30,6 +30,15 @@ public class StudyBase : MonoBehaviour, IReset
         }
         //标记当前正在进行的步骤
         StudyManager.Instance.CurrentStep = steps[Index];
+
+        if (steps[Index].PlayMode == PlayMode.Start)
+        {
+            AudioManager.Instance.PlayAudio(steps[Index].AudioName);
+        }
+        else if (steps[Index].PlayMode == PlayMode.Stop)
+        {
+            AudioManager.Instance.StopPlay();
+        }
     }
     /// <summary>
     /// 每一步结束的时候做的事情
@@ -43,6 +52,7 @@ public class StudyBase : MonoBehaviour, IReset
     }
     protected IEnumerator StartSteps()
     {
+        Index = StudyManager.Instance.StartStep;
         while (true)
         {
             if (Index >= steps.Count)
@@ -56,6 +66,7 @@ public class StudyBase : MonoBehaviour, IReset
             }
             DoStepStart();
             yield return new WaitWhile(() => steps[Index].keepWaiting);
+            yield return new WaitForSeconds(steps[Index].StepFinishWaitTime);
             DoStepEnd();
         }
     }

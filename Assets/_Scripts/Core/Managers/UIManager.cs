@@ -7,11 +7,13 @@ public class UIManager : MonoSingleton<UIManager>, IReset
     public UIMain UIMain;
     public UIYesNo UiYesNo;
     public UISubtitle UISubtitle;
+    public UIClock UIClock;
     public void Awake()
     {
         UIMain = Global.FindChild<UIMain>(transform, "UIMain");
         UiYesNo = Global.FindChild<UIYesNo>(transform, "UIYesNo");
         UISubtitle = Global.FindChild<UISubtitle>(transform, "UISubtitle");
+        UIClock = Global.FindChild<UIClock>(transform, "UIClock");
     }
 
     public void Start()
@@ -19,6 +21,8 @@ public class UIManager : MonoSingleton<UIManager>, IReset
         SetCanvasGroupVisibleAndClickable(UiYesNo.TheCanvasGroup, false);
         SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, false);
         StudyManager.Instance.OnStartStudy += () => { SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, true); };
+        StudyManager.Instance.OnEndStudy +=
+            () => { SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, false); };
     }
 
     /// <summary>

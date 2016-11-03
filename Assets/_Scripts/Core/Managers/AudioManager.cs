@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Pan_Tools;
 
-public class AudioManager : MonoSingleton<AudioManager>
+public class AudioManager : MonoSingleton<AudioManager>, IReset
 {
     public Dictionary<string, AudioClip> NowPlayAudioDic;
     private AudioSource NowPlayingAudio;
@@ -23,6 +23,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     public void Start()
     {
         OnGUIManager.Instance.OnGuiAction += OnGUIAudioManager;
+        StudyManager.Instance.OnEndStudy += Reset;
     }
 
 
@@ -32,6 +33,10 @@ public class AudioManager : MonoSingleton<AudioManager>
     /// <param name="AudioName"></param>
     public void PlayAudio(string AudioName)
     {
+        if (StudyManager.Instance.CurrentStep.PlayMode == PlayMode.Continue)
+        {
+            return;
+        }
         if (NowPlayingAudio != null)
             if (NowPlayingAudio.isPlaying)
                 NowPlayingAudio.Stop();
@@ -41,6 +46,11 @@ public class AudioManager : MonoSingleton<AudioManager>
             NowPlayingAudio.clip = tempAudioClip;
         }
         NowPlayingAudio.Play();
+    }
+
+    public void StopPlay()
+    {
+        NowPlayingAudio.Stop();
     }
 
     public void OnGUIAudioManager()
@@ -75,5 +85,10 @@ public class AudioManager : MonoSingleton<AudioManager>
              }
              LoadOverFlag = true;
          }));
+    }
+
+    public void Reset()
+    {
+        StopPlay();
     }
 }

@@ -6,6 +6,16 @@ public class StepActionClickToSwitch : StepActionBase
     private bool _onFlag;
     public Vector3 SwitchOnPos;
     public Vector3 SwitchOffPos;
+    [SerializeField]
+    private StepActionLight light;
+    public override void Awake()
+    {
+        base.Awake();
+        if (light == null)
+        {
+            light = GetComponentInChildren<StepActionLight>();
+        }
+    }
 
     public void Start()
     {
@@ -36,5 +46,9 @@ public class StepActionClickToSwitch : StepActionBase
     {
         GameObjectInfo.Status = rotationFlag ? Enum_GameObjectStatus.SwitchOn : Enum_GameObjectStatus.SwitchOff;
         transform.localEulerAngles = _onFlag ? SwitchOnPos : SwitchOffPos;
+        if (light != null)
+        {
+            light.TurnLightOnOff(GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn);
+        }
     }
 }

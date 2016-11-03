@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using HighlightingSystem;
 
@@ -14,7 +15,22 @@ public class GameObjectInfo : MonoBehaviour, IReset
     public int UniqueId;
 
     [Tooltip("物体目前的状态")]
-    public Enum_GameObjectStatus Status;
+    [SerializeField]
+    private Enum_GameObjectStatus status;
+
+    public Enum_GameObjectStatus Status
+    {
+        get { return status; }
+        set
+        {
+            status = value;
+            if (OnStatusChangeAction != null)
+            {
+                OnStatusChangeAction();
+            }
+        }
+    }
+
     [Tooltip("高亮物体")]
     public Transform[] HighlitTarget;
     [Tooltip("使用自身作为高亮显示物体")]
@@ -32,13 +48,15 @@ public class GameObjectInfo : MonoBehaviour, IReset
     [HideInInspector]
     public CameraLocator Locator;
 
+    public Action OnStatusChangeAction;
+
     public void Awake()
     {
         if (Locator == null)
             Locator = GetComponent<CameraLocator>();
         if (useSelfModelHighlight)
         {
-            HighlitTarget = new Transform[] {transform};
+            HighlitTarget = new Transform[] { transform };
         }
     }
 

@@ -3,9 +3,9 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+[ExecuteInEditMode]
 public class GameObjectInfoManager : MonoBehaviour
 {
-
     private static GameObjectInfoManager _instance;
 
     public static GameObjectInfoManager Instance
@@ -37,8 +37,12 @@ public class GameObjectInfoManager : MonoBehaviour
     public void Awake()
     {
         BuildGameObjectsInfoDictionary();
+        Debug.Log("asdasd");
     }
 
+    public void Update()
+    {
+    }
     /// <summary>
     /// 添加场景中所有物体
     /// </summary>
@@ -70,4 +74,5 @@ public class GameObjectInfoManager : MonoBehaviour
             }
         }
     }
+
 }

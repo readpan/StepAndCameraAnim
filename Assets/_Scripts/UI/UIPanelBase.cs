@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class UIPanelBase : MonoBehaviour,IReset
 {
     public CanvasGroup TheCanvasGroup;

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonGroup : MonoBehaviour
 {
     public CanvasGroup CanvasGroup { get; set; }
-    public Button Button { get; set; }
+    public Button Button;
 
     public Text Text;
 

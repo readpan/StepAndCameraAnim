@@ -5,12 +5,36 @@ using Pan_Tools;
 
 public class Step : StepBase
 {
+    /// <summary>
+    /// 目标ID
+    /// </summary>
     public int TargetUniqueId { get; set; }
+    /// <summary>
+    /// 字幕
+    /// </summary>
     public string Subtitle { get; set; }
+
     private Enum_GameObjectStatus _targetStatus = Enum_GameObjectStatus.None;
     private bool _autoCameraAnim = true;
 
     private GameObjectInfo _gameObjectInfo = null;
+    /// <summary>
+    /// 步骤完成后等待时间
+    /// </summary>
+    public float StepFinishWaitTime = 0.3f;
+    /// <summary>
+    /// 播放音频模式
+    /// </summary>
+    public PlayMode PlayMode;
+    /// <summary>
+    /// 播放音频名
+    /// </summary>
+    public string AudioName;
+
+    /// <summary>
+    /// 是否是按键步骤
+    /// </summary>
+    public bool IsPressStep = false;
 
 
     /// <summary>
@@ -35,10 +59,15 @@ public class Step : StepBase
     /// <param name="targetStatus">目标状态</param>
     /// <param name="audioName">音频文件</param>
     /// <param name="autoCameraAnim">是否要有过场动画</param>
-    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, string audioName, bool autoCameraAnim = true) : this(targetUniqueId, targetStatus, autoCameraAnim)
+    /// <param name="playMode">播放模式</param>
+    public Step(int targetUniqueId, Enum_GameObjectStatus targetStatus, string audioName, bool autoCameraAnim = true,
+        PlayMode playMode = PlayMode.Start) : this(targetUniqueId, targetStatus, autoCameraAnim)
     {
         ConfigSubtitle("");
-        StepStartAutoAction += () => { AudioManager.Instance.PlayAudio(audioName); };
+        PlayMode = playMode;
+        AudioName = audioName;
+        //if (playAudio)
+        //    StepStartAutoAction += () => { AudioManager.Instance.PlayAudio(audioName); };
     }
 
     /// <summary>
@@ -50,7 +79,8 @@ public class Step : StepBase
     /// <param name="audioName"></param>
     /// <param name="autoCameraAnim"></param>
     public Step(string subtitle, int targetUniqueId, Enum_GameObjectStatus targetStatus, string audioName,
-        bool autoCameraAnim = true) : this(targetUniqueId, targetStatus, audioName, autoCameraAnim)
+        PlayMode playMode = PlayMode.Start,
+        bool autoCameraAnim = true) : this(targetUniqueId, targetStatus, audioName, autoCameraAnim, playMode)
     {
         ConfigSubtitle(subtitle);
     }
@@ -60,14 +90,22 @@ public class Step : StepBase
     /// </summary>
     /// <param name="targetUniqueId"></param>
     /// <param name="WaitTime"></param>
-    public Step(int targetUniqueId, float WaitTime, string audioName = "")
+    public Step(int targetUniqueId, float WaitTime)
     {
         ConfigSubtitle("");
         TargetUniqueId = targetUniqueId;
         LinkGameInfo(targetUniqueId);
-        //播放音频
-        if (audioName != "")
-            StepStartAutoAction += () => { AudioManager.Instance.PlayAudio(audioName); };
+        ////播放音频
+        //if (audioName == "")
+        //    StepStartAutoAction += () => { AudioManager.Instance.StopPlay(); };
+        //else if (audioName == "contiue")
+        //{
+
+        //}
+        //else
+        //{
+        //    StepStartAutoAction += () => { AudioManager.Instance.PlayAudio(audioName); };
+        //}
         //X秒后自动执行
         StepStartAutoAction += () =>
         {
@@ -83,10 +121,17 @@ public class Step : StepBase
     /// </summary>
     /// <param name="targetUniqueId"></param>
     /// <param name="WaitTime"></param>
-    public Step(string subtitle,int targetUniqueId, float WaitTime, string audioName = ""):this(targetUniqueId,WaitTime,audioName)
+    public Step(string subtitle, int targetUniqueId, float WaitTime)
+        : this(targetUniqueId, WaitTime)
     {
-        
+
         ConfigSubtitle(subtitle);
+    }
+
+    public Step(string subtitle, int targetUniqueId, float WaitTime, string audioName, PlayMode playMode = PlayMode.Start) : this(subtitle, targetUniqueId, WaitTime)
+    {
+        AudioName = audioName;
+        PlayMode = playMode;
     }
 
     private void ConfigSubtitle(string subtitle)
@@ -108,6 +153,7 @@ public class Step : StepBase
             Debug.LogError("Can't find Such gameObject whitch id = " + targetUniqueId);
         }
     }
+
     public override bool keepWaiting
     {
         get
@@ -128,7 +174,15 @@ public class Step : StepBase
         //是否自动移动摄像机
         if (_autoCameraAnim)
         {
-            _gameObjectInfo.Locator.DoLocator();
+            try
+            {
+                _gameObjectInfo.Locator.DoLocator();
+
+            }
+            catch (Exception)
+            {
+                Debug.Log("没有定位，但是正在尝试定位。");
+            }
         }
         Debug.Log(TargetUniqueId + " has start");
     }
@@ -138,4 +192,12 @@ public class Step : StepBase
         //取消高亮物体
         _gameObjectInfo.RemoveHighligh();
     }
+
+}
+
+public enum PlayMode
+{
+    Start = 1,
+    Continue = 2,
+    Stop = 3,
 }

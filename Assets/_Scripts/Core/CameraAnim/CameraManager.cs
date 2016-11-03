@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class CameraManager : /*MonoSingleton<CameraManager>*/MonoBehaviour
 {
@@ -47,6 +48,8 @@ public class CameraManager : /*MonoSingleton<CameraManager>*/MonoBehaviour
     /// 鼠标旋转缩放平移控制器
     /// </summary>
     public MouseFollowRotation MouseFollowRotation;
+
+    public Ease CameraEaseType = Ease.InOutSine;
 
     public void Awake()
     {

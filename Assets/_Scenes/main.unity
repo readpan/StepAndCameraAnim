@@ -124,6 +124,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11463948, guid: a8ab616e6dfdd33438439ad0a32dccb7, type: 2}
+      propertyPath: GameObjectInfoToFind
+      value: 166211606
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8ab616e6dfdd33438439ad0a32dccb7, type: 2}
   m_IsPrefabParent: 0
@@ -166,9 +170,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11483282, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
-      propertyPath: Offline
-      value: 1
+    - target: {fileID: 11476194, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
+      propertyPath: StartStep
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434674, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
+      propertyPath: DebugMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}

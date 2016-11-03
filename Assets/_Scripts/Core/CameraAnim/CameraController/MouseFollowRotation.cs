@@ -22,7 +22,7 @@ public class MouseFollowRotation : MonoBehaviour
     /// <summary>
     /// 是否在自己的控制下
     /// </summary>
-    private bool isUnderControll;
+    private bool isUnderControll = true;
 
     public void SetIsUnderControll(bool controllable)
     {
@@ -88,7 +88,7 @@ public class MouseFollowRotation : MonoBehaviour
                     //translateVector3 = Vector3.zero;
                 }
 
-                distance -= Input.GetAxis("Mouse ScrollWheel") * mSpeed;
+                distance -= Input.GetAxis("Mouse ScrollWheel") * mSpeed * Time.deltaTime;
                 distance = Mathf.Clamp(distance, minDistance, maxDistance);
                 Quaternion rotation = Quaternion.Euler(RotateY, RotateX, 0.0f);
                 Vector3 disVector = new Vector3(0.0f, 0.0f, -distance);
