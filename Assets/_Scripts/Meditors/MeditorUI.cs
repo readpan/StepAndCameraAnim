@@ -33,7 +33,7 @@ public class MeditorUI : MonoBehaviour
     /// <param name="subtitle"></param>
     public void SetSubtitle(string subtitle)
     {
-        UIManager.Instance.UISubtitle.Text.text = subtitle;
+        UIManager.Instance.UISubtitle.SetText(subtitle);
     }
 
     /// <summary>

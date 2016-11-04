@@ -22,17 +22,17 @@ public class ChapterStudy : StudyBase
         switch (chapterIndex)
         {
             case 101:
-                ChapterOne();
+                ChapterStartup();
                 break;
             case 102:
-                ChapterTwo();
+                ChapterShutdown();
                 break;
             default:
                 break;
         }
     }
 
-    private void ChapterOne()
+    private void ChapterStartup()
     {
         steps = null;
         steps = new List<Step>();
@@ -50,10 +50,10 @@ public class ChapterStudy : StudyBase
         steps.Add(new Step("5.电脑机柜：打开计算机.按下开机键", 559050764, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_004"));
         steps.Add(new Step("6.电脑机柜：打开DAU电源.向上推开关，打开DAU电源", 1861012354, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_005"));
         steps.Add(new Step("7.电脑机柜：打开伺服电源.向上推开关，打开伺服电源", 1539773313, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_006"));
-        steps.Add(new Step("", 1123024661, 5, "",PlayMode.Stop));//发射机柜
+        steps.Add(new Step("", 1123024661, 5, "", PlayMode.Stop));//发射机柜
         steps.Add(new Step("8.发射箱：机柜供电.向上推开关，打开机柜供电", 239833176, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_007"));
         steps.Add(new Step("9.发射机：辅助供电.向上推开关，打开辅助供电", 1717942894, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_008"));
-        steps.Add(new Step("", 1321559355, 5, "",PlayMode.Stop));//配电箱。
+        steps.Add(new Step("", 1321559355, 5, "", PlayMode.Stop));//配电箱。
         steps.Add(new Step("10.配电箱：伺服功能外放.伺服功能外放1", 2052902562, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_009"));
         steps.Add(new Step("伺服功能外放2", 1715264242, Enum_GameObjectStatus.SwitchOn, "", PlayMode.Continue, false));
         steps.Add(new Step("伺服功能外放3", 468960565, Enum_GameObjectStatus.SwitchOn, "", PlayMode.Continue, false));
@@ -80,7 +80,22 @@ public class ChapterStudy : StudyBase
         PressKeyToGo("结束", "", PlayMode.Stop);
         StartCoroutine("StartSteps");
     }
-
+    private void ChapterShutdown()
+    {
+        steps = null;
+        steps = new List<Step>();
+        steps.Add(new Step(1312623178, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_002"));
+        {
+            Step s = new Step(880672262, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_020");
+            s.StepStartAutoAction += () =>
+            {
+                Debug.Log("Auto Do!");
+            };
+            steps.Add(s);
+        }
+        steps.Add(new Step(1022588476, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_001"));
+        StartCoroutine("StartSteps");
+    }
     private void PressKeyToGo(string subtitle, Action action = null)
     {
         PressKeyToGo(subtitle, "", PlayMode.Start, false, action);
@@ -106,22 +121,7 @@ public class ChapterStudy : StudyBase
         steps.Add(s);
     }
 
-    private void ChapterTwo()
-    {
-        steps = null;
-        steps = new List<Step>();
-        steps.Add(new Step(1312623178, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_002"));
-        {
-            Step s = new Step(880672262, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_020");
-            s.StepStartAutoAction += () =>
-            {
-                Debug.Log("Auto Do!");
-            };
-            steps.Add(s);
-        }
-        steps.Add(new Step(1022588476, Enum_GameObjectStatus.SwitchOn, "Radar_Startup_001"));
-        StartCoroutine("StartSteps");
-    }
+    
 
     public void OnGUIChapterStudy()
     {
@@ -135,13 +135,13 @@ public class ChapterStudy : StudyBase
             {
                 if (StudyManager.Instance.OnStartStudy != null)
                     StudyManager.Instance.OnStartStudy();
-                ChapterOne();
+                ChapterStartup();
             }
             if (GUILayout.Button("Start Chapter Two"))
             {
                 if (StudyManager.Instance.OnStartStudy != null)
                     StudyManager.Instance.OnStartStudy();
-                ChapterTwo();
+                ChapterShutdown();
             }
         }
     }

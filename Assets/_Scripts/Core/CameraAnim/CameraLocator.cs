@@ -37,8 +37,8 @@ public class CameraLocator : MonoBehaviour
             CameraManager.Instance.OnCameraAnimStartAction(gameObject);
         }
         TargetCamera.DOKill();
-        //先看向物体
-        TargetCamera.DOLookAt(transform.position, CameraRotateSpeed);
+        //先看向物体 暂时关掉先看向物体
+        //TargetCamera.DOLookAt(transform.position, CameraRotateSpeed);
         //然后按照路径进行运动
         TargetCamera.DOPath(_paths, MoveDuration).SetDelay(CameraRotateSpeed)/*.SetEase(CameraManager.Instance.CameraEaseType)*/.OnComplete(() =>
         {

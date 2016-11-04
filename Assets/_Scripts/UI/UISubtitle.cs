@@ -46,4 +46,10 @@ public class UISubtitle : UIPanelBase
     //        CloseContinue();
     //    }
     //}
+
+    public void SetText(string text)
+    {
+        UIManager.Instance.SetCanvasGroupVisibleAndClickable(TheCanvasGroup, text != "");
+        Text.text = text;
+    }
 }
