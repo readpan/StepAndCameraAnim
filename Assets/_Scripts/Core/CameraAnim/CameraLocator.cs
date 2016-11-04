@@ -7,7 +7,7 @@ public class CameraLocator : MonoBehaviour
     [Tooltip("相机目标,默认为main camera")]
     public Transform TargetCamera;
     [Tooltip("这段摄像机动画的时间,默认为3秒")]
-    public float MoveDuration = 1f;
+    public float MoveDuration = 2f;
     [Tooltip("摄像机转向目标的速度")]
     public float CameraRotateSpeed = 0.3f;
 

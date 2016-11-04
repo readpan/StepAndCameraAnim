@@ -15,6 +15,10 @@ public class StepActionBase : MonoBehaviour,IReset
         GameObjectInfo = GetComponent<GameObjectInfo>();
     }
 
+    protected virtual void Start()
+    {
+        
+    }
     protected virtual bool JudgeIfCanDo()
     {
         return GameObjectInfo.UniqueId == StudyManager.Instance.CurrentStep.TargetUniqueId;

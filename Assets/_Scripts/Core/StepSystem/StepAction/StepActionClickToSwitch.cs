@@ -20,6 +20,7 @@ public class StepActionClickToSwitch : StepActionBase
     public void Start()
     {
         GameObjectInfoManager.Instance.OnResetAction += Reset;
+        GameObjectInfo.OnStatusChangeAction += StatusChanged;
     }
 
     public void OnMouseUp()
@@ -50,5 +51,11 @@ public class StepActionClickToSwitch : StepActionBase
         {
             light.TurnLightOnOff(GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn);
         }
+    }
+
+    private void StatusChanged()
+    {
+        transform.localEulerAngles = GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn ? SwitchOnPos : SwitchOffPos;
+        _onFlag = GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn;
     }
 }
