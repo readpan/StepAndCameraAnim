@@ -3,11 +3,11 @@ using System.Collections;
 
 public class StepActionLight : MonoBehaviour
 {
-    private Light light;
+    private Light _light;
     private void Awake()
     {
-        light = GetComponentInChildren<Light>();
-        if (light != null)
+        _light = GetComponentInChildren<Light>();
+        if (_light != null)
             TurnLightOnOff(false);
     }
     // Use this for initialization
@@ -18,6 +18,6 @@ public class StepActionLight : MonoBehaviour
 
     public void TurnLightOnOff(bool on)
     {
-        light.enabled = on;
+        _light.enabled = on;
     }
 }

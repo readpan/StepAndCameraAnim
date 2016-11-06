@@ -3,7 +3,7 @@ using System.Collections;
 
 public class StepActionPressKeyToGo : StepActionBase
 {
-    public void Start()
+    protected override  void Start()
     {
         InputManager.Instance.OnClickContinue += DoPress;
     }

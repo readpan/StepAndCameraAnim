@@ -182,6 +182,10 @@ Prefab:
       propertyPath: Offline
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11483282, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
+      propertyPath: ConfigUrl
+      value: https://www.jianguoyun.com/d/home#preview=StepConfig.txt::path=%2F::sl=0::tab=browse::id=c378a2::magic=5346aa610be16556
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
   m_IsPrefabParent: 0

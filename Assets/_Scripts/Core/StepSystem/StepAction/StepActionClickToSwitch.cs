@@ -7,18 +7,19 @@ public class StepActionClickToSwitch : StepActionBase
     public Vector3 SwitchOnPos;
     public Vector3 SwitchOffPos;
     [SerializeField]
-    private StepActionLight light;
+    private StepActionLight _light;
     public override void Awake()
     {
         base.Awake();
-        if (light == null)
+        if (_light == null)
         {
-            light = GetComponentInChildren<StepActionLight>();
+            _light = GetComponentInChildren<StepActionLight>();
         }
     }
 
-    public void Start()
+    protected override  void Start()
     {
+        base.Start();
         GameObjectInfoManager.Instance.OnResetAction += Reset;
         GameObjectInfo.OnStatusChangeAction += StatusChanged;
     }
@@ -47,9 +48,9 @@ public class StepActionClickToSwitch : StepActionBase
     {
         GameObjectInfo.Status = rotationFlag ? Enum_GameObjectStatus.SwitchOn : Enum_GameObjectStatus.SwitchOff;
         transform.localEulerAngles = _onFlag ? SwitchOnPos : SwitchOffPos;
-        if (light != null)
+        if (_light != null)
         {
-            light.TurnLightOnOff(GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn);
+            _light.TurnLightOnOff(GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn);
         }
     }
 
