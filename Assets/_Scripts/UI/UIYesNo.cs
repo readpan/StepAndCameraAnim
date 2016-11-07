@@ -29,7 +29,7 @@ public class UIYesNo : UIPanelBase
     private void OnClickButtonNo()
     {
         UIManager.Instance.SetCanvasGroupVisibleAndClickable(TheCanvasGroup,false);
-        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UIMain.TheCanvasGroup, true);
+        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UiMain.TheCanvasGroup, true);
 
     }
 

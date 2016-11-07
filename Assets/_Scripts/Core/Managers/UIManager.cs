@@ -4,25 +4,27 @@ using Pan_Tools;
 
 public class UIManager : MonoSingleton<UIManager>, IReset
 {
-    public UIMain UIMain;
+    public UIMain UiMain;
     public UIYesNo UiYesNo;
-    public UISubtitle UISubtitle;
-    public UIClock UIClock;
+    public UISubtitle UiSubtitle;
+    public UIClock UiClock;
+    public UIDownLoadMask UiDownLoadMask;
     public void Awake()
     {
-        UIMain = Global.FindChild<UIMain>(transform, "UIMain");
+        UiMain = Global.FindChild<UIMain>(transform, "UIMain");
         UiYesNo = Global.FindChild<UIYesNo>(transform, "UIYesNo");
-        UISubtitle = Global.FindChild<UISubtitle>(transform, "UISubtitle");
-        UIClock = Global.FindChild<UIClock>(transform, "UIClock");
+        UiSubtitle = Global.FindChild<UISubtitle>(transform, "UISubtitle");
+        UiClock = Global.FindChild<UIClock>(transform, "UIClock");
+        UiDownLoadMask = Global.FindChild<UIDownLoadMask>(transform, "UIDownLoadMask");
     }
 
     public void Start()
     {
         SetCanvasGroupVisibleAndClickable(UiYesNo.TheCanvasGroup, false);
-        SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, false);
-        StudyManager.Instance.OnStartStudy += () => { SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, true); };
+        SetCanvasGroupVisibleAndClickable(UiSubtitle.TheCanvasGroup, false);
+        StudyManager.Instance.OnStartStudy += () => { SetCanvasGroupVisibleAndClickable(UiSubtitle.TheCanvasGroup, true); };
         StudyManager.Instance.OnEndStudy +=
-            () => { SetCanvasGroupVisibleAndClickable(UISubtitle.TheCanvasGroup, false); };
+            () => { SetCanvasGroupVisibleAndClickable(UiSubtitle.TheCanvasGroup, false); };
     }
 
     /// <summary>
@@ -39,8 +41,8 @@ public class UIManager : MonoSingleton<UIManager>, IReset
 
     public void Reset()
     {
-        UIMain.Reset();
+        UiMain.Reset();
         UiYesNo.Reset();
-        UISubtitle.Reset();
+        UiSubtitle.Reset();
     }
 }

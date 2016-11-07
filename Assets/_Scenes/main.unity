@@ -85,6 +85,52 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &318165595 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 446614, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
+  m_PrefabInternal: {fileID: 2026104811}
+--- !u!1001 &1477253177
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 318165595}
+    m_Modifications:
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 435668, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0474306967f67f64cbfd5332fc34cce9, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1987029622
 Prefab:
   m_ObjectHideFlags: 0
@@ -170,21 +216,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11476194, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
-      propertyPath: StartStep
-      value: 0
+    - target: {fileID: 11426948, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
+      propertyPath: ConfigUrl
+      value: http://28067797.nat123.net/config.txt
       objectReference: {fileID: 0}
     - target: {fileID: 11434674, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
       propertyPath: DebugMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11483282, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
-      propertyPath: Offline
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11483282, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}
-      propertyPath: ConfigUrl
-      value: https://www.jianguoyun.com/d/home#preview=StepConfig.txt::path=%2F::sl=0::tab=browse::id=c378a2::magic=5346aa610be16556
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2346eb4016ffe85439d5aa8180df7326, type: 2}

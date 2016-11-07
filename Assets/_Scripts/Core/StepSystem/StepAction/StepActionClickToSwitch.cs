@@ -17,7 +17,7 @@ public class StepActionClickToSwitch : StepActionBase
         }
     }
 
-    protected override  void Start()
+    protected override void Start()
     {
         base.Start();
         GameObjectInfoManager.Instance.OnResetAction += Reset;
@@ -56,7 +56,12 @@ public class StepActionClickToSwitch : StepActionBase
 
     private void StatusChanged()
     {
+        Debug.Log("Status Changed.");
         transform.localEulerAngles = GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn ? SwitchOnPos : SwitchOffPos;
         _onFlag = GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn;
+        if (_light != null)
+        {
+            _light.TurnLightOnOff(GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn);
+        }
     }
 }

@@ -25,12 +25,12 @@ public class ClickChangeStatusOpenPic : ClickChangeStatus
         GameObjectInfo.Status = GameObjectInfo.Status == TargetStatus ? _originalStatus : TargetStatus;
         if (targetMesh != null)
         {
-            targetMesh.material.mainTexture = TargetStatus == Enum_GameObjectStatus.SwitchOn ? TargetTexture : _originalTexture;
+            targetMesh.material.mainTexture = GameObjectInfo.Status == TargetStatus ? TargetTexture : _originalTexture;
         }
     }
 
     private void StatusChanged()
     {
-        targetMesh.material.mainTexture = GameObjectInfo.Status == Enum_GameObjectStatus.SwitchOn ? TargetTexture : _originalTexture;
+        targetMesh.material.mainTexture = GameObjectInfo.Status == TargetStatus ? TargetTexture : _originalTexture;
     }
 }

@@ -33,7 +33,7 @@ public class MeditorUI : MonoBehaviour
     /// <param name="subtitle"></param>
     public void SetSubtitle(string subtitle)
     {
-        UIManager.Instance.UISubtitle.SetText(subtitle);
+        UIManager.Instance.UiSubtitle.SetText(subtitle);
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ public class MeditorUI : MonoBehaviour
     public void SetPressIcon()
     {
         UIManager.Instance.SetCanvasGroupVisibleAndClickable(
-            UIManager.Instance.UISubtitle.ContinueButtonGroup.CanvasGroup, true);
+            UIManager.Instance.UiSubtitle.ContinueButtonGroup.CanvasGroup, true);
 
     }
 
@@ -55,13 +55,29 @@ public class MeditorUI : MonoBehaviour
         Application.ExternalCall(ToWebFunctionStrings.BackToWeb);
         if (StudyManager.Instance.OnEndStudy != null)
             StudyManager.Instance.OnEndStudy();
-        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UIMain.TheCanvasGroup, true);
+        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UiMain.TheCanvasGroup, true);
         UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UiYesNo.TheCanvasGroup, false);
     }
 
+    /// <summary>
+    /// 显示表
+    /// </summary>
     public void ShowClock()
     {
-        UIManager.Instance.UIClock.Rotate();
-        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UIClock.TheCanvasGroup,true);
+        UIManager.Instance.UiClock.Rotate();
+        UIManager.Instance.SetCanvasGroupVisibleAndClickable(UIManager.Instance.UiClock.TheCanvasGroup, true);
+    }
+
+    /// <summary>
+    /// 设置加载是否成功ui
+    /// </summary>
+    public void SetDownLoadReady()
+    {
+        UIManager.Instance.UiDownLoadMask.SetMask(false);
+    }
+
+    public void SetAccess(string msg)
+    {
+        UIManager.Instance.UiDownLoadMask.TextLoadInfo.text = msg;
     }
 }

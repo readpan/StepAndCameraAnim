@@ -77,24 +77,8 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
         LoadOverFlag = false;
         //清空字典
         NowPlayAudioDic.Clear();
-        //Debug.Log(WWW.LoadFromCacheOrDownload("file:///D:/test.JPG",0).size);
-        //if (WWWLoadManager.Instance.Offline)
-        //{
-        //    for (int i = 0; i < 14; i++)
-        //    {
-        //        var tempAudioClip = Resources.Load(name + "/RadarRadar_Startup_" + string.Format("0:000", i)) as AudioClip;
-        //        if (tempAudioClip != null) NowPlayAudioDic.Add(tempAudioClip.name, tempAudioClip);
-        //    }
-        //    var tempAudioClip1 = Resources.Load(name + "/Radar_Startup_FaSheJiXiang") as AudioClip;
-        //    if (tempAudioClip1 != null) NowPlayAudioDic.Add(tempAudioClip1.name, tempAudioClip1);
-        //    var tempAudioClip2 = Resources.Load(name + "/Radar_Startup_PeiDianXiang") as AudioClip;
-        //    if (tempAudioClip2 != null) NowPlayAudioDic.Add(tempAudioClip2.name, tempAudioClip2);
-        //    var tempAudioClip3 = Resources.Load(name + "/Radar_Startup_RDAJiGui") as AudioClip;
-        //    if (tempAudioClip3 != null) NowPlayAudioDic.Add(tempAudioClip3.name, tempAudioClip3);
-        //}
-        //else
         {
-            StartCoroutine(WWWLoadManager.Instance.LoadSource("http://oby0sn38x.bkt.clouddn.com/" + name + ".audiopackage", () =>
+            StartCoroutine(WWWLoadManager.Instance.LoadSource(ConfigManager.Instance.ConfigDictionary["url"] + name + ".audiopackage", () =>
             {
                 for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
                 {

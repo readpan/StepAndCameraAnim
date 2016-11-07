@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using BestHTTP;
 using Pan_Tools;
 
@@ -10,18 +11,10 @@ public class WWWLoadManager : MonoSingleton<WWWLoadManager>
     [Tooltip("是否离线下载")]
     public bool Offline;
 
-    public string ConfigUrl = "";
-    public void Start()
-    {
-        HTTPRequest request = new HTTPRequest(new Uri("ConfigUrl"), OnRequestFinished);
-        request.Send();
-    }
-    void OnRequestFinished(HTTPRequest request, HTTPResponse response)
-    {
-        Debug.Log("Request Finished! Text received: " + response.DataAsText);
-    }
+
     public IEnumerator LoadSource(string path, Action action = null)
     {
+        yield return new WaitUntil(ConfigManager.Instance.GetReceiveConfigFlag);
         //卸载掉之前的资源
         if (www != null)
             www.assetBundle.Unload(true);

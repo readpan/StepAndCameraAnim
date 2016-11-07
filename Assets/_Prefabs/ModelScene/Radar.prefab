@@ -29605,7 +29605,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11409662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29669,7 +29669,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11410764}
+  _light: {fileID: 11410764}
 --- !u!114 &11410764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29707,7 +29707,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11414470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29814,7 +29814,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11481174}
+  _light: {fileID: 11481174}
 --- !u!114 &11417604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29843,7 +29843,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11418102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29872,7 +29872,7 @@ MonoBehaviour:
   TargetStatus: 201
   SwitchOnPos: {x: 50, y: 0, z: 0}
   SwitchOffPos: {x: 90, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11419008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -29940,7 +29940,7 @@ MonoBehaviour:
   TargetStatus: 201
   SwitchOnPos: {x: 60, y: 0, z: 0}
   SwitchOffPos: {x: 90, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11420898
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30045,7 +30045,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11427382}
+  _light: {fileID: 11427382}
 --- !u!114 &11425904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30060,7 +30060,7 @@ MonoBehaviour:
   TargetStatus: 201
   SwitchOnPos: {x: 60, y: 0, z: 0}
   SwitchOffPos: {x: 90, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11425972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30143,7 +30143,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11428800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30333,7 +30333,7 @@ MonoBehaviour:
   TargetStatus: 201
   SwitchOnPos: {x: 60, y: 0, z: 0}
   SwitchOffPos: {x: 90, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11435410
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30577,7 +30577,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11450676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30705,7 +30705,7 @@ MonoBehaviour:
   TargetStatus: 201
   SwitchOnPos: {x: 50, y: 0, z: 0}
   SwitchOffPos: {x: 90, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11462102
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30907,7 +30907,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11477134}
+  _light: {fileID: 11477134}
 --- !u!114 &11472430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30933,7 +30933,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 11472430}
 --- !u!114 &11474270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -30948,7 +30948,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11409662}
+  _light: {fileID: 11409662}
 --- !u!114 &11474948
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31046,7 +31046,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11451580}
+  _light: {fileID: 11451580}
 --- !u!114 &11477552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31144,7 +31144,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11483872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31205,7 +31205,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11485766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31231,7 +31231,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11486720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31334,7 +31334,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 0}
+  _light: {fileID: 0}
 --- !u!114 &11492662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31415,7 +31415,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11483872}
+  _light: {fileID: 11483872}
 --- !u!114 &11496870
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31467,7 +31467,7 @@ MonoBehaviour:
   TargetStatus: 0
   SwitchOnPos: {x: -70, y: 0, z: 0}
   SwitchOffPos: {x: 0, y: 0, z: 0}
-  light: {fileID: 11484954}
+  _light: {fileID: 11484954}
 --- !u!114 &11498820
 MonoBehaviour:
   m_ObjectHideFlags: 1
