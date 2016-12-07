@@ -24,10 +24,21 @@ public class ConfigManager : MonoSingleton<ConfigManager>
 
     public void Start()
     {
-        LoadSceneManager.Instance.OnLoadSceneOver += () =>
+        if (!WWWLoadManager.Instance.Offline)
         {
-            StartCoroutine(StartLoadConfig());
-        };
+            LoadSceneManager.Instance.OnLoadSceneOver += () =>
+            {
+                StartCoroutine(StartLoadConfig());
+            };
+        }
+        else
+        {
+            LoadSceneManager.Instance.OnLoadSceneOver += () =>
+            {
+                //离线直接关闭加载等待
+                MeditorManager.Instance.MeditorUi.SetDownLoadReady();
+            };
+        }
     }
 
     public IEnumerator StartLoadConfig()

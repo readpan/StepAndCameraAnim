@@ -7,7 +7,7 @@ using Pan_Tools;
 
 public class WWWLoadManager : MonoSingleton<WWWLoadManager>
 {
-    public WWW www;
+    public WWW Www;
     [Tooltip("是否离线下载")]
     public bool Offline;
 
@@ -16,12 +16,12 @@ public class WWWLoadManager : MonoSingleton<WWWLoadManager>
     {
         yield return new WaitUntil(ConfigManager.Instance.GetReceiveConfigFlag);
         //卸载掉之前的资源
-        if (www != null)
-            www.assetBundle.Unload(true);
+        if (Www != null)
+            Www.assetBundle.Unload(true);
 
-        www = WWW.LoadFromCacheOrDownload(path, 1);
-        yield return www;
-        Debug.Log("Loaded + size: " + www.assetBundle.LoadAllAssets().Length);
+        Www = WWW.LoadFromCacheOrDownload(path, 1);
+        yield return Www;
+        Debug.Log("Loaded + size: " + Www.assetBundle.LoadAllAssets().Length);
         if (action != null)
             action();
     }

@@ -75,19 +75,30 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
     public void ReloadAudioToDic(string name)
     {
         LoadOverFlag = false;
-        //清空字典
-        NowPlayAudioDic.Clear();
+        if (!WWWLoadManager.Instance.Offline)
         {
-            StartCoroutine(WWWLoadManager.Instance.LoadSource(ConfigManager.Instance.ConfigDictionary["url"] + name + ".audiopackage", () =>
+            //清空字典
+            NowPlayAudioDic.Clear();
             {
-                for (int i = 0; i < WWWLoadManager.Instance.www.assetBundle.LoadAllAssets().Length; i++)
+                StartCoroutine(WWWLoadManager.Instance.LoadSource(ConfigManager.Instance.ConfigDictionary["url"] + ConfigManager.Instance.ConfigDictionary[name], () =>
                 {
-                    NowPlayAudioDic.Add(WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.www.assetBundle.LoadAllAssets()[i] as AudioClip);
-                }
-                LoadOverFlag = true;
-            }));
+                    for (int i = 0; i < WWWLoadManager.Instance.Www.assetBundle.LoadAllAssets().Length; i++)
+                    {
+                        NowPlayAudioDic.Add(WWWLoadManager.Instance.Www.assetBundle.LoadAllAssets()[i].name, WWWLoadManager.Instance.Www.assetBundle.LoadAllAssets()[i] as AudioClip);
+                    }
+                    LoadOverFlag = true;
+                }));
+            }
         }
-
+        else
+        {
+            var res = Resources.LoadAll<AudioClip>("audio/"+name);
+            for (int i = 0; i < res.Length; i++)
+            {
+                NowPlayAudioDic.Add(res[i].name, res[i]);
+            }
+            LoadOverFlag = true;
+        }
     }
 
     public void Reset()
