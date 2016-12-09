@@ -21,7 +21,7 @@ public class Step : StepBase
     /// <summary>
     /// 步骤完成后等待时间
     /// </summary>
-    public float StepFinishWaitTime = 0.3f;
+    public float StepFinishWaitTime = 0f;
     /// <summary>
     /// 播放音频模式
     /// </summary>

@@ -44,14 +44,20 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
         AudioClip tempAudioClip;
         if (NowPlayAudioDic.TryGetValue(AudioName, out tempAudioClip))
         {
-            NowPlayingAudio.clip = tempAudioClip;
+            if (NowPlayingAudio != null) NowPlayingAudio.clip = tempAudioClip;
         }
-        NowPlayingAudio.Play();
+        //播放延迟
+        if (NowPlayingAudio != null)
+        {
+            NowPlayingAudio.PlayDelayed(0.3f);
+            NowPlayingAudio.Play();
+        }
     }
 
     public void StopPlay()
     {
         NowPlayingAudio.Stop();
+        NowPlayingAudio.clip = null;
     }
 
     public void OnGUIAudioManager()
@@ -75,10 +81,10 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
     public void ReloadAudioToDic(string name)
     {
         LoadOverFlag = false;
+        NowPlayAudioDic.Clear();
         if (!WWWLoadManager.Instance.Offline)
         {
             //清空字典
-            NowPlayAudioDic.Clear();
             {
                 StartCoroutine(WWWLoadManager.Instance.LoadSource(ConfigManager.Instance.ConfigDictionary["url"] + ConfigManager.Instance.ConfigDictionary[name], () =>
                 {
@@ -92,7 +98,7 @@ public class AudioManager : MonoSingleton<AudioManager>, IReset
         }
         else
         {
-            var res = Resources.LoadAll<AudioClip>("audio/"+name);
+            var res = Resources.LoadAll<AudioClip>("audios/" + name);
             for (int i = 0; i < res.Length; i++)
             {
                 NowPlayAudioDic.Add(res[i].name, res[i]);

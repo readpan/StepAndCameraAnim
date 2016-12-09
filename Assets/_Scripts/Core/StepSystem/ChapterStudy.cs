@@ -99,30 +99,30 @@ public class ChapterStudy : StudyBase
         //steps.Add(new Step("", 2054650885, 5));//电脑机柜
         //steps.Add(new Step("", 1123024661, 5));//发射机柜
 
-        PressKeyToGo("1.电脑机柜：退出RDASC程序", "", PlayMode.Start, true, () =>
+        PressKeyToGo("1.电脑机柜：退出RDASC程序", "Radar_Shutdown_000", PlayMode.Start, true, () =>
           {
               Application.ExternalCall(ToWebFunctionStrings.popupEquipMainten, "radar_tuichu");
           });
         steps.Add(new Step("", 1123024661, 5));//发射机柜
-        steps.Add(new Step("2.发射机：辅助供电.向下推开关，关闭辅助供电", 1717942894, Enum_GameObjectStatus.SwitchOff, ""));
+        steps.Add(new Step("2.发射机：辅助供电.向下推开关，关闭辅助供电", 1717942894, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_001"));
         steps.Add(new Step("", 2054650885, 5));//电脑机柜
-        steps.Add(new Step("3.电脑机柜：向下推开关，关闭伺服电源", 1539773313, Enum_GameObjectStatus.SwitchOff, ""));
+        steps.Add(new Step("3.电脑机柜：向下推开关，关闭伺服电源", 1539773313, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_002"));
         steps.Add(new Step("", 1321559355, 5));//配电箱
-        steps.Add(new Step("4.配电箱：伺服功能外放.关闭伺服功能外放1", 2052902562, Enum_GameObjectStatus.SwitchOff, ""));
-        steps.Add(new Step("关闭伺服功能外放2", 1715264242, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Stop, false));
-        steps.Add(new Step("关闭伺服功能外放3", 468960565, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Stop, false));
+        steps.Add(new Step("4.配电箱：伺服功能外放.关闭伺服功能外放1", 2052902562, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_003"));
+        steps.Add(new Step("关闭伺服功能外放2", 1715264242, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Continue, false));
+        steps.Add(new Step("关闭伺服功能外放3", 468960565, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Continue, false));
         steps.Add(new Step("", 2054650885, 5));//电脑机柜
-        steps.Add(new Step("5.电脑机柜：向下推开关，关闭DAU电源", 1861012354, Enum_GameObjectStatus.SwitchOff, ""));
-        steps.Add(new Step("6.电脑机柜：关闭计算机", 559050764, Enum_GameObjectStatus.SwitchOff, ""));
+        steps.Add(new Step("5.电脑机柜：向下推开关，关闭DAU电源", 1861012354, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_004"));
+        steps.Add(new Step("6.电脑机柜：关闭计算机", 559050764, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_005"));
         steps.Add(new Step("", 1321559355, 5));//配电箱
-        steps.Add(new Step("7.配电箱：关闭RDA电源，开关由上向下推 上面黄色灯灭", 166211606, Enum_GameObjectStatus.SwitchOff, ""));
-        steps.Add(new Step("8.配电箱：关闭接收机电源，开关由上向下推 上面黄色灯灭", 1132878191, Enum_GameObjectStatus.SwitchOff, ""));
+        steps.Add(new Step("7.配电箱：关闭RDA电源，开关由上向下推 上面黄色灯灭", 166211606, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_006"));
+        steps.Add(new Step("8.配电箱：关闭接收机电源，开关由上向下推 上面黄色灯灭", 1132878191, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_007"));
         PressKeyToGo("大约在半小时侯，检查聚焦线圈的温度，在聚焦线圈变凉后，可以关闭“高压供电”", "");
         steps.Add(new Step("关闭发射机1", 1680334727, Enum_GameObjectStatus.SwitchOff, ""));
         steps.Add(new Step("关闭发射机2", 1479903111, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Stop, false));
         steps.Add(new Step("关闭发射机3", 1083889391, Enum_GameObjectStatus.SwitchOff, "", PlayMode.Stop, false));
         steps.Add(new Step("", 1123024661, 5));//发射机柜
-        steps.Add(new Step("9.发射箱：机柜供电。向下推开关，关闭机柜供电", 239833176, Enum_GameObjectStatus.SwitchOff, ""));
+        steps.Add(new Step("9.发射箱：机柜供电。向下推开关，关闭机柜供电", 239833176, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_008"));
         PressKeyToGo("结束", "");
         StartCoroutine("StartSteps");
     }

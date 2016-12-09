@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 939273f6a9c3e454bb9a22bb0c132596
+timeCreated: 1481101389
+licenseType: Free
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  normalize: 1
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: radar
+  assetBundleVariant: audiopackage

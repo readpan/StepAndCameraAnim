@@ -31,6 +31,7 @@ public class StudyBase : MonoBehaviour, IReset
         //标记当前正在进行的步骤
         StudyManager.Instance.CurrentStep = steps[Index];
 
+        //播放音频
         if (steps[Index].PlayMode == PlayMode.Start)
         {
             AudioManager.Instance.PlayAudio(steps[Index].AudioName);

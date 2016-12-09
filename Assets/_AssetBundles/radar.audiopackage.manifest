@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3833970368
+CRC: 794106945
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 9b7986dcf8b93770b22d8f8b7107456e
+    Hash: 14abb40aa512643f6a6d513557f8eed1
   TypeTreeHash:
     serializedVersion: 2
     Hash: c516f2a3b2b6b67ef759f6410a790acd
@@ -12,21 +12,30 @@ ClassTypes:
 - Class: 83
   Script: {instanceID: 0}
 Assets:
-- Assets/_Audio/RadarAudio/Radar_Startup_000.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_002.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_011.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_009.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_012.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_010.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_003.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_RDAJiGui.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_007.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_PeiDianXiang.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_001.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_013.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_006.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_008.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_004.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_005.wav
-- Assets/_Audio/RadarAudio/Radar_Startup_FaSheJiXiang.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_008.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_000.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_003.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_002.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_011.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_002.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_009.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_000.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_012.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_010.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_003.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_001.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_RDAJiGui.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_007.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_PeiDianXiang.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_005.mp3
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_006.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_001.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_004.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_013.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_006.wav
+- Assets/_Audio/RadarAudio/Radar_Shutdown/Radar_Shutdown_007.mp3
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_008.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_004.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_005.wav
+- Assets/_Audio/RadarAudio/Radar_Startup/Radar_Startup_FaSheJiXiang.wav
 Dependencies: []
