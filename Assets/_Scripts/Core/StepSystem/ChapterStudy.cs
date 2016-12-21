@@ -27,6 +27,9 @@ public class ChapterStudy : StudyBase
             case 102:
                 ChapterShutdown();
                 break;
+            case 103:
+                ChapterSuTiaoGuan();
+                break;
             default:
                 break;
         }
@@ -124,6 +127,15 @@ public class ChapterStudy : StudyBase
         steps.Add(new Step("", 1123024661, 5));//发射机柜
         steps.Add(new Step("9.发射箱：机柜供电。向下推开关，关闭机柜供电", 239833176, Enum_GameObjectStatus.SwitchOff, "Radar_Shutdown_008"));
         PressKeyToGo("结束", "");
+        StartCoroutine("StartSteps");
+    }
+
+    private void ChapterSuTiaoGuan()
+    {
+        steps = null;
+        steps = new List<Step>();
+        steps.Add(new Step("", 1156565915, Enum_GameObjectStatus.SwitchOn, ""));
+        steps.Add(new Step("", 1156565915, 5));//发射机柜
         StartCoroutine("StartSteps");
     }
     private void PressKeyToGo(string subtitle, Action endAction = null)

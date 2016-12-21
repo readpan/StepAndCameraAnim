@@ -26,7 +26,11 @@ public class MouseFollowRotation : MonoBehaviour
 
     public void SetIsUnderControll(bool controllable)
     {
+#if UNITY_EDITOR || UNITY_WEBPLAYER
         isUnderControll = controllable;
+#elif UNITY_ANDROID
+        isUnderControll = false;
+#endif
     }
 
     public void SetTarget(GameObject go)
